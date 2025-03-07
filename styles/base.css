@@ -7,7 +7,7 @@ h1, h2, h3 {
 }
 
 header {
-    background-image: linear-gradient(to right, rgb(58, 71, 77), rgb(10, 131, 183));
+    background-image: linear-gradient(to right, rgb(162, 194, 209), rgb(10, 131, 183));
     padding: 1rem 0 0;
 }
 
@@ -89,14 +89,14 @@ figcaption {
 }
 
 .card h2 {
-    background-image: linear-gradient(to right, rgb(58, 71, 77), rgb(10, 131, 183));
+    background-image: linear-gradient(to right, rgb(162, 194, 209), rgb(10, 131, 183));
     margin: 0;
     padding: 0.5rem;
     border-radius: 10px 10px 0 0;
 }
 
 footer  {
-    background-image: linear-gradient(to right, rgb(58, 71, 77), rgb(10, 131, 183));
+    background-image: linear-gradient(to right, rgb(162, 194, 209), rgb(10, 131, 183));
     padding: 0.5rem;
     text-align: center;
 }
@@ -115,5 +115,5 @@ footer  {
 }
 
 #lastModified {
-    color: rgb(236, 243, 24);
+    color: rgb(41, 13, 1);
 }
