@@ -1,5 +1,6 @@
 :root {
-    --headfoot-background: #2ec47e, #49aaa5;
+    --bg-start: #2ec47e;
+    --bg-end: #49aaa5;
 
 }
 
@@ -9,7 +10,7 @@
 
 header,
 footer {
-    background-image: linear-gradient(to right, var(--headfoot-background));
+    background-image: linear-gradient(to right, var(--bg-start), var(--bg-end));
     padding: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 30px #314d4b;
@@ -31,6 +32,7 @@ header {
 
 #navigation {
     display: none;
+    background-color: #3ed1c7;
 }
 
 #navigation a {
@@ -55,8 +57,7 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     column-gap: 10px;
     row-gap: 10px;
-    justify-items: center;
-    justify-content: start;
+    justify-items: e;
 }
 
 main h2 {
@@ -74,10 +75,8 @@ footer {
 
 #menu {
     font-size: 2rem;
-    text-decoration: none;
     color: #092718;
     font-weight: 900;
-    transition: 0.5s;
     justify-self: end;
 }
 
@@ -88,5 +87,4 @@ footer {
 #menu.open::before {
     content: "X";
     font-weight: 700;
-    transition: 0.5s;
 }

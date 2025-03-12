@@ -1,13 +1,10 @@
 @media only screen and (min-width: 700px){
     #navigation {
         display: flex;
-        background-color: #3ed1c7;
-        flex-direction: row;
-        grid-column: auto;
     }
 
     #navigation.open {
-        grid-column: auto;
+        grid-column: 2;
         flex-direction: row;
     }
 
