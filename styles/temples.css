@@ -1,10 +1,15 @@
+:root {
+    --headfoot-background: #2ec47e, #49aaa5;
+
+}
+
 * {
     font-family: "League Spartan", Helvetica, sans-serif;
 }
 
 header,
 footer {
-    background-image: linear-gradient(to right, #2ec47e, #49aaa5);
+    background-image: linear-gradient(to right, var(--headfoot-background));
     padding: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 30px #314d4b;
@@ -54,7 +59,7 @@ main {
     justify-content: start;
 }
 
-main h1 {
+main h2 {
     grid-column: 1 / -1;
 }
 
