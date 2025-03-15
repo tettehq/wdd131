@@ -57,7 +57,7 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     column-gap: 10px;
     row-gap: 10px;
-    justify-items: e;
+    justify-items: center;
 }
 
 main h2 {
