@@ -5,7 +5,7 @@
 }
 
 * {
-    font-family: "League Spartan", Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 
 header,
@@ -66,7 +66,7 @@ main h2 {
 
 figure img {
     max-width: 250px;
-    max-height: 250px;
+    height: 250px;
 }
 
 footer {
