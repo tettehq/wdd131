@@ -1,0 +1,41 @@
+@media only screen and (min-width: 740px) {
+    main {
+        position: relative;
+    }
+
+    .info-box {
+        position: absolute;
+        border: 1px solid var(--info-bg);
+        background-color: var(--info-bg);
+    }
+
+    .card-title h2 {
+        margin: 0;
+    }
+
+    .card-title {
+        position: relative;
+        background-color: var(--main-border-color);
+        padding: var(--slim-pad);
+        color: var(--header-text);
+        left: -30px;
+    }
+
+    #weather-box .card-title h2::after {
+        content: " 🌦️";
+    }
+
+    #data-box {
+        top: 10%;
+        left: 3%;
+    }
+
+    #weather-box {
+        top: 45%;
+        right: 3%;
+    }
+
+    #weather-image {
+        display: none;
+    }
+}
