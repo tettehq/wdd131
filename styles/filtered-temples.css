@@ -1,0 +1,119 @@
+:root {
+    box-sizing: border-box;
+    --bg-start: #2ec47e;
+    --bg-end: #49aaa5;
+    --card-bg: rgba(176, 221, 221, 0.356);
+    --img-shadow: rgba(0, 0, 0, 0.2);
+    --card-shadow: rgba(38, 133, 133, 0.555);
+
+}
+
+* {
+    font-family: "League Spartan", Helvetica, sans-serif;
+}
+
+header,
+footer {
+    background-image: linear-gradient(to right, var(--bg-start), var(--bg-end));
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px #314d4b;
+}
+
+header {
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+#navigation.open {
+    display: flex;
+    background-color: #3ed1c7;
+    flex-direction: column;
+    grid-column: 1 / -1;
+}
+
+#navigation {
+    display: none;
+    background-color: #3ed1c7;
+}
+
+#navigation a {
+    flex: 1 1 auto;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 1rem;
+    color: black;
+    transition: 0.5s;
+    text-align: center;
+}
+
+#navigation a:hover, .focus {
+    color: #3ed1c7;
+    background-color: #314d4b;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    column-gap: 30px;
+    row-gap: 30px;
+    justify-items: center;
+}
+
+main h2 {
+    grid-column: 1 / -1;
+}
+
+.card-container {
+    width: 100%;
+    height: 400px;
+    justify-self: center;
+    text-align: center;
+    background-color: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.card-container:hover {
+    box-shadow: 10px 10px 10px var(--card-shadow);
+}
+
+.card-container div {
+    flex: 1 1 auto;
+}
+
+.card-container img {
+    flex: 1 1 auto;
+    max-width: 250px;
+    margin: 0 auto 1rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), -5px -5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+footer {
+    text-align: center;
+}
+
+#menu {
+    font-size: 2rem;
+    color: #092718;
+    font-weight: 900;
+    justify-self: end;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "X";
+    font-weight: 700;
+}
