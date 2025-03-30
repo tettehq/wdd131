@@ -77,7 +77,7 @@ const temples = [
         dedicated: "2004, January, 11",
         area: 17500,
         imageUrl:
-            ""
+            "/wdd131/images/accra-ghana-temple.webp"
     },
     {
         templeName: "Sapporo Japan",
@@ -85,7 +85,7 @@ const temples = [
         dedicated: "2016, August, 21",
         area: 48480,
         imageUrl:
-            ""
+            "/wdd131/images/sapporo-japan-temple.webp"
     },
     {
         templeName: "Cedar City Utah",
@@ -93,7 +93,7 @@ const temples = [
         dedicated: "2017, December, 10",
         area: 42657,
         imageUrl:
-            ""
+            "/wdd131/images/cedar-city-utah-temple.webp"
     },
     {
         templeName: "Quetzaltenango Guatemala",
@@ -101,7 +101,7 @@ const temples = [
         dedicated: "2011, December, 11",
         area: 21085,
         imageUrl:
-            ""
+            "/wdd131/images/quetzaltenango-guatemala-temple.webp"
     },
     {
         templeName: "Casper Wyoming",
@@ -109,9 +109,26 @@ const temples = [
         dedicated: "2024, November, 24",
         area: 9950,
         imageUrl:
-            ""
+            "/wdd131/images/casper-wyoming-temple.webp"
     },
 ];
+
+// filtered temple lists
+const largeTemples = temples.filter(temple => temple.area > 90000);
+
+const smallTemples = temples.filter(temple => temple.area < 10000);
+
+const oldTemples = temples.filter(temple => {
+    const d = new Date(temple.dedicated);
+    const year = d.getFullYear();
+    return year < 1900;
+});
+
+const newTemples = temples.filter(temple => {
+    const d = new Date(temple.dedicated);
+    const year = d.getFullYear();
+    return year > 2000;
+});
 
 const main = document.querySelector("main");
 const pageHeading = document.getElementById("heading");
@@ -160,10 +177,15 @@ home.addEventListener("click", () => filterHome(temples));
 function filterHome(temples) {
     main.replaceChildren();
     main.appendChild(pageHeading);
-    for (let i = 0; i < 7; i++) {
-        createTempleCard(temples[i]);
-    }
+    temples.forEach(temple => createTempleCard(temple));
     pageHeading.textContent = "Home";
+
+    document.querySelectorAll(".current").forEach(link => {
+        if (link.classList.contains("current")) {
+            link.classList.remove("current");
+        }
+    });
+    home.classList.add("current");
 }
 
 // show old temples
@@ -173,15 +195,15 @@ old.addEventListener("click", () => filterOld(temples));
 function filterOld(temples) {
     main.replaceChildren();
     main.appendChild(pageHeading);
-    temples.forEach(temple => {
-        const d = new Date(temple.dedicated);
-        const year = d.getFullYear();
-        console.log(year);
-        if (year < 1900) {
-            createTempleCard(temple);
+    oldTemples.forEach(temple => createTempleCard(temple));
+    pageHeading.textContent = "Old Temples";
+
+    document.querySelectorAll(".current").forEach(link => {
+        if (link.classList.contains("current")) {
+            link.classList.remove("current");
         }
     });
-    pageHeading.textContent = "Old Temples"
+    old.classList.add("current");
 }
 
 // show new temples
@@ -191,15 +213,15 @@ recent.addEventListener("click", () => filterNew(temples));
 function filterNew(temples) {
     main.replaceChildren();
     main.appendChild(pageHeading);
-    temples.forEach(temple => {
-        const d = new Date(temple.dedicated);
-        const year = d.getFullYear();
-        console.log(year);
-        if (year > 2000) {
-            createTempleCard(temple);
+    newTemples.forEach(temple => createTempleCard(temple));
+    pageHeading.textContent = "New Temples";
+
+    document.querySelectorAll(".current").forEach(link => {
+        if (link.classList.contains("current")) {
+            link.classList.remove("current");
         }
     });
-    pageHeading.textContent = "New Temples";
+    recent.classList.add("current");
 }
 
 // show large temples
@@ -209,25 +231,31 @@ large.addEventListener("click", () => filterLarge(temples));
 function filterLarge(temples) {
     main.replaceChildren();
     main.appendChild(pageHeading);
-    temples.forEach(temple => {
-        if (temple.area > 90000) {
-            createTempleCard(temple);
+    largeTemples.forEach(temple => createTempleCard(temple));
+    pageHeading.textContent = "Large Temples";
+
+    document.querySelectorAll(".current").forEach(link => {
+        if (link.classList.contains("current")) {
+            link.classList.remove("current");
         }
     });
-    pageHeading.textContent = "Large Temples";
+    large.classList.add("current");
 }
 
-// show large temples
+// show small temples
 const small = document.getElementById("small");
 small.addEventListener("click", () => filterSmall(temples));
 
 function filterSmall(temples) {
     main.replaceChildren();
     main.appendChild(pageHeading);
-    temples.forEach(temple => {
-        if (temple.area < 10000) {
-            createTempleCard(temple);
+    smallTemples.forEach(temple => createTempleCard(temple));
+    pageHeading.textContent = "Small Temples";
+
+    document.querySelectorAll(".current").forEach(link => {
+        if (link.classList.contains("current")) {
+            link.classList.remove("current");
         }
     });
-    pageHeading.textContent = "Small Temples";
+    small.classList.add("current");
 }

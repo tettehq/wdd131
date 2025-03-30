@@ -51,7 +51,7 @@ header {
     text-align: center;
 }
 
-#navigation a:hover, .focus {
+#navigation a:hover, #navigation a.current {
     color: #3ed1c7;
     background-color: #314d4b;
 }
