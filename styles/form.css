@@ -137,7 +137,7 @@ span.optional::before {
 }
 
 /* REQUIRED INPUT STYLING */
-.revForm span#required::before {
+.revForm span.required::before {
     content: "(required)";
     color: red;
 }
