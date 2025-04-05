@@ -1,0 +1,150 @@
+:root {
+    --header-footer-bg: #2ec47e, #49aaa5;
+    --header-footer-pad: 1px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "League Spartan", Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 5px auto;
+}
+
+header,
+footer {
+    background: linear-gradient(to right, var(--header-footer-bg));
+    text-align: center;
+    padding: var(--header-footer-pad);
+
+}
+
+main {
+    padding: .8rem;
+    min-height: 20rem;
+    background-color: #a4e0dd52;
+    margin: 1rem auto;
+    border-radius: 8px;
+    max-width: 750px;
+    font-size: 1.2rem;
+}
+
+.revForm .label {
+    display: block;
+    padding-top: 1.5rem;
+}
+
+.revForm input[type="text"],
+.revForm input[type="date"],
+.revForm select,
+.revForm textarea {
+    display: block;
+    padding: .75rem;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #72c5c181;
+    border-radius: 8px;
+}
+
+.revForm label.check {
+    padding-top: .5rem;
+}
+
+.revForm .features label {
+    display: block;
+    width: max-content;
+}
+
+/* STARS */
+input[type="radio"] {
+    display: none;
+    position: relative;
+    caret-color: rgba(0, 0, 0, 0);
+}
+
+.revForm .stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+
+.revForm .stars>label {
+    color: rgb(68, 60, 15);
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    caret-color: rgba(0, 0, 0, 0);
+}
+
+.stars>label::before {
+    content: "\2606";
+}
+
+.stars input:checked~label::before,
+.stars>label:hover::before,
+.stars>label:hover~label::before
+{
+    content: "\2605";
+}
+
+/* SUBMIT BUTTON */
+.revForm div.submit {
+    max-width: 350px;
+}
+
+.revForm input[type="submit"] {
+    border: none;
+    background: linear-gradient(to right, var(--header-footer-bg));
+    padding: .75rem;
+    width: 95%;
+    max-width: 350px;
+    margin: 1rem auto 2rem;
+    border-radius: 8px;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.revForm input[type="submit"]:hover {
+    box-shadow: 5px 5px 5px #999;
+}
+
+.revForm input[type="submit"]:active {
+    box-shadow: 5px 5px 5px #999 inset;
+}
+
+/* OPTIONAL INPUT STYLING */
+span.optional::before {
+    content: "(Optional)";
+    color: blue;
+}
+
+.revForm input:required,
+.revForm select:required
+{
+    border-right: solid 8px red;
+}
+
+.revForm input:required:valid,
+.revForm select:required:valid
+{
+    border-right: solid 8px green;
+}
+
+/* REQUIRED INPUT STYLING */
+.revForm span#required::before {
+    content: "(required)";
+    color: red;
+}
+
+
+
+/* REVIEW.HTML */
+#reviewPage {
+    text-align: center;
+}

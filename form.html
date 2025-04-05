@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a page to allow users to leave a review of products.">
+    <meta name="author" content="Aaron Tetteh Quarshie">
+    <title>Product Review Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <main>
+        <form class="revForm" method="get" action="review.html">
+            <label class="label">Product Name <span id="required"></span>
+                <select name="pname" id="pname" required>
+                    <option value="" disabled selected>Select a Product...</option>
+                </select>
+            </label>
+            
+            <div class="label">Overall Rating <span id="required"></span>
+                <div class="stars">
+                    <input type="radio" id="fivestar" name="stars" value="5" required><label for="fivestar"></label>
+                    <input type="radio" id="fourstar" name="stars" value="4" required><label for="fourstar"></label>
+                    <input type="radio" id="threestar" name="stars" value="3" required><label for="threestar"></label>
+                    <input type="radio" id="twostar" name="stars" value="2" required><label for="twostar"></label>
+                    <input type="radio" id="onestar" name="stars" value="1" required><label for="onestar"></label>
+                </div>
+            </div>
+
+            <label class="label">Date of Installation <span id="required"></span>
+                <input type="date" id="installDate" name="instDate" required>
+            </label>
+
+            <div class="features label">
+                Which features did you find useful?<br>(Check all that apply)
+                <label class="check"><input type="checkbox" id="durability" name="durability" value="yes">Durability</label>
+                <label class="check"><input type="checkbox" id="ease" name="ease" value="yes">Ease of Use</label>
+                <label class="check"><input type="checkbox" id="performance" name="performance" value="yes">Performance</label>
+                <label class="check"><input type="checkbox" id="design" name="design" value="yes">Design</label>
+            </div>
+
+            <label class="label">Written Review <span class="optional"></span>
+                <textarea name="comments" id="comments" rows="5"></textarea>
+            </label>
+
+            <label class="label">Your Name <span class="optional"></span>
+                <input type="text" id="username" name="username">
+            </label>
+
+            <div class="submit">
+                <input type="submit" value="Post Review">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p><span id="currentyear"></span> ♦ Aaron Tetteh Quarshie ♦ Ghana</p>
+        <p id="lastModified"></p>
+    </footer>    
+</body>
+</html>
