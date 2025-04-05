@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    --header-bg: #3d3c3c;
+    
+}
+
+body {
+    background-image: url("../../images/page-bg.webp");
+    font-family: "League Spartan", Arial, Helvetica, sans-serif;
+}
+
+main {
+    max-width: 70%;
+    margin: 20px auto;
+}
+
+header, footer {
+    background-color: var(--header-bg);
+    text-align: center;
+    padding: 1rem;
+    color: #f0f8ff;
+}
+
+h1, h2, h3, p>span {
+    font-family: "Lobster";
+}
+
+.colors {
+    padding: 0.5rem;
+    border-radius: 6px;
+    margin-top: 10px;
+    border: 1px solid var(--header-bg);
+}
+
+.schema1 {
+    background-color: var(--header-bg);
+    color: #f0f8ff;
+}
+
+.schema2 {
+    border: 1px solid var(--header-bg);
+    background-color: var(--header-bg);
+    color: #f0f8ff;
+}
+
+.schema3 {
+    background-color: #5e5a5a4b;
+}
+
+section img {
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+}
