@@ -21,7 +21,7 @@ header, footer {
     color: #f0f8ff;
 }
 
-h1, h2, h3, p>span {
+h1, h2, h3 {
     font-family: "Lobster";
 }
 

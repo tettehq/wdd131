@@ -1,0 +1,308 @@
+:root {
+    --header-bg: #3d3c3c;
+    --header-text: #f0f8ff;
+    --card-bg: #818181a6;
+    --button-bg: linear-gradient(to right, #574444cc, #4b1620);
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../images/bg.webp");
+    background-size: cover;
+    font-family: "League Spartan", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+form input[type="submit"] {
+    font-family: "Lobster";
+}
+
+header,
+footer {
+    background-color: var(--header-bg);
+    text-align: center;
+    padding: 1rem 0 0;
+    color: var(--header-text);
+}
+
+footer {
+    padding: 1rem;
+}
+
+footer p {
+    line-height: 1.5rem;
+}
+
+img#usericon {
+    width: 30px;
+    color: var(--header-text);
+}
+
+header div {
+    display: grid;
+    grid-template-columns: 10% 1fr 10%;
+    align-items: center;
+    padding: 1rem;
+}
+
+nav#navigation.open {
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    grid-column: 1 / -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+nav#navigation {
+    display: none;
+    background-color: black;
+}
+
+nav#navigation a {
+    flex: 1 1 auto;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    color: rgb(214, 217, 218);
+    font-size: 1.5rem;
+}
+
+nav#navigation a:hover {
+    background-color: rgb(214, 217, 218);
+    color: rgb(41, 48, 51);
+    font-weight: 700;
+}
+
+header div a {
+    text-decoration: none;
+}
+
+#logType {
+    color: var(--header-text);
+    position: relative;
+    bottom: 7px;
+}
+
+#menu {
+    font-size: 2rem;
+    color: var(--header-text);
+    font-weight: 900;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "X";
+    font-weight: 700;
+}
+
+main {
+    min-height: 90vh;
+}
+
+#bannerMessage {
+    height: 80vh;
+    background-color: var(--card-bg);
+    margin: 10px;
+    border-radius: 8px;
+}
+
+#bannerMessage span {
+    display: block;
+    padding: 1rem;
+    font-size: clamp(.5rem, 7vw, 40px);
+}
+
+#bannerMessage span:first-child {
+    padding-top: 5rem;
+    font-size: clamp(1rem, 12vw, 70px);
+    font-family: "Lobster";
+}
+
+#projects {
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
+.projectBox {
+    background-color: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    border-radius: 8px;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    min-width: 250px;
+}
+
+#projects img {
+    max-width: 350px;
+    width: 100%;
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    height: 100%;
+}
+
+/* FORM STYLING */
+form {
+    background-color: var(--header-bg);
+    max-width: 500px;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+}
+
+form h2 {
+    color: var(--header-text);
+    text-align: center;
+}
+
+form a, form p {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--header-text);
+}
+
+form a:hover {
+    font-size: 1.3rem;
+    transition: .5s;
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: var(--header-text);
+}
+
+main#aboutUs {
+    background-color: var(--card-bg);
+    font-size: 2rem;
+    width: clamp(300px, 70vw, 800px);
+    padding: 1rem;
+    margin: 1rem auto;
+    border-radius: 8px;
+    height: 200px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="url"],
+textarea
+{
+    display: block;
+    padding: .75rem;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+form div.submit {
+    max-width: 350px;
+}
+
+input[type="submit"] {
+    border: none;
+    background-image: var(--button-bg);
+    padding: .75rem;
+    width: 95%;
+    max-width: 350px;
+    margin: 1rem auto 2rem;
+    border-radius: 8px;
+    display: block;
+    color: var(--header-text);
+    font-size: 1.5rem;
+}
+
+input[type="submit"]:hover {
+    box-shadow: 5px 5px 5px #999;
+}
+
+input[type="submit"]:active {
+    box-shadow: 5px 5px 5px #999 inset;
+}
+
+input:required,
+textarea:required {
+    border-right: solid 8px red;
+}
+
+input:required:valid,
+textarea:required:valid {
+    border-right: solid 8px green;
+}
+
+/* MEDIUM SCREEN WIDTH */
+@media only screen and (min-width: 750px) {
+    nav#navigation {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: black;
+        }
+
+    nav#navigation.open {
+        grid-column: 2;
+        flex-direction: row;
+        position: static;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    header div {
+        grid-template-columns: 1fr 10%;
+    }
+
+    nav#navigation a {
+        font-size: initial;
+    }
+
+    #projects {
+        width: clamp(700px, 70%, 850px);
+        margin: 2rem auto;
+    }
+
+    .projectBox {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 15px;
+        justify-items: center;
+        max-width: initial;
+    }
+
+    .projectBox:nth-child(1) img {
+        grid-column: 2/3;
+        justify-self: end;
+    }
+
+    .projectBox:nth-child(1) div {
+        grid-column: 1/2;
+        grid-row: 1/ 2;
+        justify-self: start;
+    }
+
+}
