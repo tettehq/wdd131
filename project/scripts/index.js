@@ -61,7 +61,7 @@ function displayProject(project) {
     projectBox.className = "projectBox";
 
     if (project.imageUrl != "") {
-        image.src = `../images/${project.imageUrl}`;
+        image.src = `/wdd131/project/images/${project.imageUrl}`;
     }
     else {
         image.src = "https://placehold.co/300/webp?text=Project+Image"
