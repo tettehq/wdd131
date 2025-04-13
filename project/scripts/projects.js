@@ -15,6 +15,15 @@ hamButton.addEventListener('click', () => {
     hamButton.classList.toggle("open")
 });
 
+const links = document.querySelectorAll('nav a');
+const currentPage = window.location.pathname;
+
+links.forEach(link => {
+    if (link.getAttribute('href') === currentPage.split('/').pop()) {
+        link.classList.add('active');
+    }
+});
+
 const projectForm = document.getElementById("projectForm");
 
 const authButton = document.getElementById("authButton");

@@ -13,6 +13,16 @@ hamButton.addEventListener('click', () => {
     hamButton.classList.toggle("open")
 });
 
+const links = document.querySelectorAll('nav a');
+const currentPage = window.location.pathname;
+
+
+links.forEach(link => {
+    if (link.getAttribute('href') === currentPage.split('/').pop()) {
+        link.classList.add('active');
+    }
+});
+
 const projectDisplaySection = document.getElementById("projects");
 
 const bannerMessage = document.getElementById("bannerMessage");
