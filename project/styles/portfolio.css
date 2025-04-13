@@ -1,7 +1,7 @@
 :root {
     --header-bg: #3d3c3c;
     --header-text: #f0f8ff;
-    --card-bg: #818181a6;
+    --card-bg: #b5b5b5a6;
     --button-bg: linear-gradient(to right, #574444cc, #4b1620);
 
 }
@@ -163,8 +163,16 @@ main {
     justify-content: space-around;
     flex-wrap: wrap;
     flex: 1 1 auto;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
     height: 100%;
+}
+
+.infoBox a {
+    color: #041e64;
+}
+
+.infoBox a:visited {
+    color: #0d124c;
 }
 
 /* FORM STYLING */
